@@ -1,7 +1,18 @@
+from datastructures import stack
+
+
 class node:
     def __init__(self, val=None):
         self.val = val
         self.next = None
+    def printlist(self):
+        nodeptr = self
+        nodelist = [self.val,]
+        while nodeptr.next:
+            nodeptr = nodeptr.next
+            nodelist = nodelist + [nodeptr.val]
+        print(nodelist)
+        return nodelist
 
 
 class singly_linked_list:
@@ -42,3 +53,21 @@ class singly_linked_list:
             nodeptr = nodeptr.next
             pos = pos - 1
         return nodeptr.val
+
+    def reverse(self):
+        nodeptr = self.head
+        nodelist = stack([nodeptr])
+        while nodeptr.next:
+            nodelist.push(nodeptr.next)
+            nodeptr = nodeptr.next
+        newhead = nodelist.pop()
+        nodeptr = nodelist.pop()
+        newhead.next = nodeptr
+        self.head.next = None
+        while nodelist.list:
+            nodeptr.next = nodelist.pop()
+            nodeptr = nodeptr.next
+        self.head = newhead
+
+    def insertion_sort(self,input_array):
+        #for next time

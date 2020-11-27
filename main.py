@@ -14,5 +14,11 @@ def test_linkedlist():
     assert testlist.position(testlist,4) == 4
     testlist.new_head(testlist,0)
     testlist.listprint(testlist)
+    tempnode = testlist.head
+    assert tempnode.printlist() == [0,1,2,3,4,5]
+    testlist.reverse(testlist)
+    assert testlist.head.printlist() == [5,4,3,2,1,0]
+    testlist.listprint(testlist)
+
 
 test_linkedlist()
