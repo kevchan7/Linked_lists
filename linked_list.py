@@ -5,6 +5,7 @@ class node:
     def __init__(self, val=None):
         self.val = val
         self.next = None
+
     def printlist(self):
         nodeptr = self
         nodelist = [self.val,]
@@ -39,7 +40,7 @@ class singly_linked_list:
 
     def insert(self, newval, pos): # pos.next is where the new node will be
         insertnode = node(newval)
-        counter = pos
+        counter = pos - 1
         nodeptr = self.head
         while counter > 1:
             nodeptr = nodeptr.next
@@ -69,5 +70,15 @@ class singly_linked_list:
             nodeptr = nodeptr.next
         self.head = newhead
 
+    def delete_node_pos(self,pos):
+        nodeptr = self.head
+        counter = pos
+        while counter:
+            nodeptr = nodeptr.next
+            counter -= 1
+        deleted_node_val = nodeptr.next.val
+        tempnode = nodeptr.next.next
+        nodeptr.next = tempnode
+        return deleted_node_val
     #def insertion_sort(self,input_array):
             #for next time
