@@ -73,12 +73,25 @@ class singly_linked_list:
     def delete_node_pos(self,pos):
         nodeptr = self.head
         counter = pos
-        while counter:
+        while counter > 0:
             nodeptr = nodeptr.next
-            counter -= 1
+            counter = counter - 1
         deleted_node_val = nodeptr.next.val
         tempnode = nodeptr.next.next
         nodeptr.next = tempnode
         return deleted_node_val
+
+    def middle(self):
+        counter = 0
+        nodeptr = self.head
+        while nodeptr.next:
+            nodeptr = nodeptr.next
+            counter = counter + 1
+        nodeptr = self.head
+        counter = counter/2
+        while counter > 0:
+            nodeptr = nodeptr.next
+            counter = counter - 1
+        return nodeptr.val
     #def insertion_sort(self,input_array):
             #for next time

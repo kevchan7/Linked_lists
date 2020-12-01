@@ -39,7 +39,8 @@ def test_delete_node():
     if list is empty return -1
 '''
 def test_middle():
-    pass
+    testlist = defined_linked_list()
+    assert testlist.middle() == 3
 
 def test_reverse():
     pass
