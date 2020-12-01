@@ -1,4 +1,4 @@
-from datastructures import stack
+from Linked_lists.datastructures import stack
 
 
 class node:
@@ -87,11 +87,13 @@ class singly_linked_list:
         while nodeptr.next:
             nodeptr = nodeptr.next
             counter = counter + 1
+        print(counter)
         nodeptr = self.head
-        counter = counter/2
-        while counter > 0:
+        counter2 = counter/2
+        print(counter2)
+        while counter2 > 0:
             nodeptr = nodeptr.next
-            counter = counter - 1
+            counter2 = counter2 - 1
         return nodeptr.val
     #def insertion_sort(self,input_array):
             #for next time
