@@ -17,6 +17,16 @@ def defined_linked_list():
     return testlist
 
 
+def defined_linked_list2():
+    testlist = singly_linked_list()
+    testlist.head = node(1)
+    testlist.append(3)
+    testlist.append(4)
+    testlist.append(12)
+    testlist.listprint()
+    testlist.head.printlist()
+    return testlist
+
 '''
     linked_list.delete_node(pos)
 
@@ -62,11 +72,15 @@ def test_reverse():
     example: 
     if n = 2 and m = 4
     [1,2,3,4,5] => [1,4,3,2,5]
+    
+    im assuming positions 2 and 4
 '''
 
 
 def test_reverse_slice():
-    pass
+    testlist = defined_linked_list()
+    testlist.reverse_slice(2, 4)
+    assert testlist.head.printlist() == [1,4,3,2,5]
 
 
 def test_swap_nodes():
@@ -74,3 +88,9 @@ def test_swap_nodes():
     testlist.swap_nodes(2, 3)
 
     assert testlist.head.printlist() == [1, 3, 2, 4, 5]
+
+
+def test_insertion_sort():
+    testlist = defined_linked_list2()
+    testlist.insertion_sort([5,2,7,6])
+    assert testlist.head.printlist() == [1, 2, 3, 4, 5, 6, 7, 12]

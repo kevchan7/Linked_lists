@@ -96,8 +96,68 @@ class singly_linked_list:
             counter2 = counter2 - 1
         return nodeptr.val
 
-    # def insertion_sort(self,input_array):
+    def insertion_sort(self,input_array):
+        for x in input_array:
+            new_node = node(x)
+            cursor = self.head
+            if x < cursor.val:
+                new_node.next = cursor
+                self.head = new_node
+            else:
+                while x > cursor.val | cursor.next:
+                    prev = cursor
+                    cursor = cursor.next
+                prev.next = new_node
+                new_node.next = cursor
+
+
     # for next time
 
     def swap_nodes(self, a, b):
-        pass
+        cursor = self.head
+        a_exist = False
+        b_exist = False
+        while cursor.next:
+            cursor = cursor.next
+            if cursor.val == a:
+                a_exist = True
+                print("a exists")
+            if cursor.val == b:
+                b_exist = True
+                print("b exists")
+        if a_exist & b_exist:
+            cursor = self.head
+            while cursor.next:
+                if cursor.val == a:
+                    cursor.val = b
+                elif cursor.val == b:
+                    cursor.val = a
+                cursor = cursor.next
+        else:
+            print(a," and ", b, " do not exist within linked list")
+
+    def reverse_slice(self, n, m):
+        cursor = self.head
+        counter = n - 2
+        while counter > 0:
+            cursor = cursor.next
+            counter -= 1
+        cutoff = cursor
+        counter = m - n + 1
+        while counter > 0:
+            cursor = cursor.next
+            counter -= 1
+        prev = cursor.next  # finding the tail of the linked list
+        cursor = cutoff.next
+        counter = m - n
+
+        while counter > 0:
+            next_node = cursor.next
+            cursor.next = prev
+            prev = cursor
+            cursor = next_node
+            counter -= 1
+        cutoff.next = cursor
+        cursor.next = prev
+
+
