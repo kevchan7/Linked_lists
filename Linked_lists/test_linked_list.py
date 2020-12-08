@@ -58,4 +58,9 @@ def test_reverse():
 def test_reverse_slice():
     pass
 
+def test_swap_nodes():
+    testlist = defined_linked_list()
+    testlist.swap_nodes(2,3)
+
+    assert testlist.head.printlist() == [1,3,2,4,5]
 
