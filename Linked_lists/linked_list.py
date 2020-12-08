@@ -8,7 +8,7 @@ class node:
 
     def printlist(self):
         nodeptr = self
-        nodelist = [self.val,]
+        nodelist = [self.val, ]
         while nodeptr.next:
             nodeptr = nodeptr.next
             nodelist = nodelist + [nodeptr.val]
@@ -38,7 +38,7 @@ class singly_linked_list:
             nodeptr = nodeptr.next
         nodeptr.next = newnode
 
-    def insert(self, newval, pos): # pos.next is where the new node will be
+    def insert(self, newval, pos):  # pos.next is where the new node will be
         insertnode = node(newval)
         counter = pos - 1
         nodeptr = self.head
@@ -70,7 +70,7 @@ class singly_linked_list:
             nodeptr = nodeptr.next
         self.head = newhead
 
-    def delete_node_pos(self,pos):
+    def delete_node_pos(self, pos):
         nodeptr = self.head
         counter = pos - 1
         while counter > 0:
@@ -89,14 +89,15 @@ class singly_linked_list:
             counter = counter + 1
         print(counter)
         nodeptr = self.head
-        counter2 = counter/2
+        counter2 = counter / 2
         print(counter2)
         while counter2 > 0:
             nodeptr = nodeptr.next
             counter2 = counter2 - 1
         return nodeptr.val
-    #def insertion_sort(self,input_array):
-            #for next time
+
+    # def insertion_sort(self,input_array):
+    # for next time
 
     def swap_nodes(self, a, b):
         pass

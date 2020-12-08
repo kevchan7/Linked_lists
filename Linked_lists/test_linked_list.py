@@ -15,6 +15,8 @@ def defined_linked_list():
     testlist.listprint()
     testlist.head.printlist()
     return testlist
+
+
 '''
     linked_list.delete_node(pos)
 
@@ -24,12 +26,15 @@ def defined_linked_list():
 
     if pos is not in list, return -1
 '''
+
+
 def test_delete_node():
     testlist = defined_linked_list()
     x = testlist.delete_node_pos(2)
     print(x)
 
-    assert testlist.head.printlist() == [1,2,4,5]
+    assert testlist.head.printlist() == [1, 2, 4, 5]
+
 
 '''
     linked_list.middle()
@@ -39,9 +44,12 @@ def test_delete_node():
 
     if list is empty return -1
 '''
+
+
 def test_middle():
     testlist = defined_linked_list()
     assert testlist.middle() == 3
+
 
 def test_reverse():
     pass
@@ -55,12 +63,14 @@ def test_reverse():
     if n = 2 and m = 4
     [1,2,3,4,5] => [1,4,3,2,5]
 '''
+
+
 def test_reverse_slice():
     pass
 
+
 def test_swap_nodes():
     testlist = defined_linked_list()
-    testlist.swap_nodes(2,3)
+    testlist.swap_nodes(2, 3)
 
-    assert testlist.head.printlist() == [1,3,2,4,5]
-
+    assert testlist.head.printlist() == [1, 3, 2, 4, 5]
