@@ -97,3 +97,6 @@ class singly_linked_list:
         return nodeptr.val
     #def insertion_sort(self,input_array):
             #for next time
+
+    def swap_nodes(self, a, b):
+        pass
