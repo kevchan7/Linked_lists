@@ -4,15 +4,15 @@ from Linked_lists.linked_list import *
 
 
 def defined_linked_list():
-    testlist = singly_linked_list
+    testlist = singly_linked_list()
     testlist.head = node(1)
-    testlist.listprint(testlist)
-    testlist.append(testlist, 2)
-    testlist.listprint(testlist)
-    testlist.append(testlist, 3)
-    testlist.append(testlist, 5)
-    testlist.insert(testlist, 4, 4)
-    testlist.listprint(testlist)
+    testlist.listprint()
+    testlist.append(2)
+    testlist.listprint()
+    testlist.append(3)
+    testlist.append(5)
+    testlist.insert(4, 4)
+    testlist.listprint()
     testlist.head.printlist()
     return testlist
 '''
@@ -26,11 +26,10 @@ def defined_linked_list():
 '''
 def test_delete_node():
     testlist = defined_linked_list()
-    x = testlist.delete_node_pos(testlist,3)
+    x = testlist.delete_node_pos(2)
     print(x)
-    tempnode = testlist.head
-    tempnode.printlist()
-    assert tempnode.printlist() == [1,2,4,5]
+
+    assert testlist.head.printlist() == [1,2,4,5]
 
 '''
     linked_list.middle()
@@ -60,6 +59,3 @@ def test_reverse_slice():
     pass
 
 
-
-defined_linked_list()
-test_delete_node()

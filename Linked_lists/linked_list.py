@@ -72,7 +72,7 @@ class singly_linked_list:
 
     def delete_node_pos(self,pos):
         nodeptr = self.head
-        counter = pos
+        counter = pos - 1
         while counter > 0:
             nodeptr = nodeptr.next
             counter = counter - 1
