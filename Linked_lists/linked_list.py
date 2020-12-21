@@ -104,9 +104,11 @@ class singly_linked_list:
                 new_node.next = cursor
                 self.head = new_node
             else:
-                while x > cursor.val | cursor.next:
+                while x > cursor.val:
                     prev = cursor
                     cursor = cursor.next
+                    if cursor.val < x:
+                        break
                 prev.next = new_node
                 new_node.next = cursor
 
@@ -160,4 +162,17 @@ class singly_linked_list:
         cutoff.next = cursor
         cursor.next = prev
 
+    def rotate_linked_list(self, k):
+        if k == 0:
+            return
+        self.head.printlist()
+        cursor = self.head
+        while cursor.next:
+            prev = cursor
+            cursor = cursor.next
+        cursor.next = self.head
+        self.head = cursor
+        prev.next = None
+        k -= 1
+        self.rotate_linked_list(k)
 

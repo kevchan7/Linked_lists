@@ -94,3 +94,9 @@ def test_insertion_sort():
     testlist = defined_linked_list2()
     testlist.insertion_sort([5,2,7,6])
     assert testlist.head.printlist() == [1, 2, 3, 4, 5, 6, 7, 12]
+
+
+def test_rotate_linked_list(): #shifts linked list nodes over to the right 4 times
+    testlist = defined_linked_list()
+    testlist.rotate_linked_list(4)
+    assert testlist.head.printlist() == [2,3,4,5,1]
